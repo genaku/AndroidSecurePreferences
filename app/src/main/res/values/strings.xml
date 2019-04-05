@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Android Secure Preferences Demo</string>
+    <string name="enter_string_to_store">Enter string to store</string>
+    <string name="enter_number_to_store">Enter number to store</string>
+    <string name="save">Save</string>
+    <string name="encrypted">Encrypted:</string>
+    <string name="decrypted">Decrypted:</string>
+    <string name="clear">Clear saved</string>
+</resources>
