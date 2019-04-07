@@ -24,6 +24,7 @@ class SecurePreferences(
      * @param key   Provides access to store data.
      * @param value Data to store.
      */
+    @Throws(IllegalArgumentException::class, SecureCellException::class)
     operator fun set(key: String, value: String) {
         if (key.isBlank()) {
             throw IllegalArgumentException("Key should not be empty")
