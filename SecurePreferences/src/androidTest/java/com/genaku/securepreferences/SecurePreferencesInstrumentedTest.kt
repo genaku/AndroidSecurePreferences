@@ -2,9 +2,10 @@ package com.genaku.securepreferences
 
 import android.preference.PreferenceManager
 import android.support.test.InstrumentationRegistry
-import org.junit.Test
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNull
 import org.junit.Before
+import org.junit.Test
 
 class SecurePreferencesInstrumentedTest {
 
@@ -59,4 +60,14 @@ class SecurePreferencesInstrumentedTest {
         preferences["key with whitespaces"] = "value"
         assertEquals("value", preferences["key with whitespaces"])
     }
+
+    @Test
+    @Throws(Exception::class)
+    fun shouldStoreBigLengthString() {
+        val expectedString =
+            "12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890"
+        preferences["key1"] = expectedString
+        assertEquals(expectedString, preferences["key1"])
+    }
+
 }

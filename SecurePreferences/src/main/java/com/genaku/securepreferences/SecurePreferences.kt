@@ -26,9 +26,7 @@ class SecurePreferences(
      */
     @Throws(IllegalArgumentException::class, SecureCellException::class)
     operator fun set(key: String, value: String) {
-        if (key.isBlank()) {
-            throw IllegalArgumentException("Key should not be empty")
-        }
+        require(key.isNotBlank()) { "Key should not be empty" }
 
         val storeKey = prepareKey(key)
         val encodedString = Coder.encrypt(storeKey, prepareValue(value))
@@ -44,9 +42,7 @@ class SecurePreferences(
      */
     @Throws(IllegalArgumentException::class, SecureCellException::class)
     operator fun get(key: String): String? {
-        if (key.isBlank()) {
-            throw IllegalArgumentException("Key should not be empty")
-        }
+        require(key.isNotBlank()) { "Key should not be empty" }
 
         val storeKey = prepareKey(key)
         val encodedString = sharedPreferences.getString(storeKey, null) ?: return null
