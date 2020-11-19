@@ -1,7 +1,7 @@
 package com.genaku.securepreferences
 
 import android.preference.PreferenceManager
-import android.support.test.InstrumentationRegistry
+import androidx.test.InstrumentationRegistry
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Before
